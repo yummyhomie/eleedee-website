@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
     --color-red-400: oklch(70.4% 0.191 22.216);
+    --color-orange-600: oklch(64.6% 0.222 41.116);
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-500: oklch(76.9% 0.188 70.08);
     --color-green-300: oklch(87.1% 0.15 154.449);
@@ -33,6 +34,9 @@
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-3xl: 1.5rem;
+    --radius-4xl: 2rem;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -494,6 +498,20 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-700 {
+    --tw-duration: 700ms;
+    transition-duration: 700ms;
+  }
   .\*\:mx-0\.5 {
     :is(& > *) {
       margin-inline: calc(var(--spacing) * 0.5);
@@ -531,6 +549,13 @@
   .\*\:via-black {
     :is(& > *) {
       --tw-gradient-via: var(--color-black);
+      --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
+    }
+  }
+  .\*\:via-transparent {
+    :is(& > *) {
+      --tw-gradient-via: transparent;
       --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
       --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
@@ -577,11 +602,83 @@
       padding-block: calc(var(--spacing) * 1);
     }
   }
+  .\*\:hover\:rounded-4xl {
+    :is(& > *) {
+      &:hover {
+        @media (hover: hover) {
+          border-radius: var(--radius-4xl);
+        }
+      }
+    }
+  }
   .\*\:hover\:text-black {
     :is(& > *) {
       &:hover {
         @media (hover: hover) {
           color: var(--color-black);
+        }
+      }
+    }
+  }
+  .\*\:hover\:underline {
+    :is(& > *) {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-line: underline;
+        }
+      }
+    }
+  }
+  .\*\:hover\:decoration-orange-600 {
+    :is(& > *) {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-color: var(--color-orange-600);
+        }
+      }
+    }
+  }
+  .\*\:hover\:decoration-2 {
+    :is(& > *) {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-thickness: 2px;
+        }
+      }
+    }
+  }
+  .\*\:hover\:decoration-4 {
+    :is(& > *) {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-thickness: 4px;
+        }
+      }
+    }
+  }
+  .\*\:hover\:underline-offset-2 {
+    :is(& > *) {
+      &:hover {
+        @media (hover: hover) {
+          text-underline-offset: 2px;
+        }
+      }
+    }
+  }
+  .\*\:hover\:underline-offset-4 {
+    :is(& > *) {
+      &:hover {
+        @media (hover: hover) {
+          text-underline-offset: 4px;
+        }
+      }
+    }
+  }
+  .\*\:hover\:underline-offset-8 {
+    :is(& > *) {
+      &:hover {
+        @media (hover: hover) {
+          text-underline-offset: 8px;
         }
       }
     }
@@ -701,6 +798,10 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -716,6 +817,7 @@
       --tw-gradient-to-position: 100%;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
+      --tw-duration: initial;
     }
   }
 }
