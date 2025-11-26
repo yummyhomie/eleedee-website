@@ -5,17 +5,18 @@
     <title>eleedee's site</title>
     <link rel="stylesheet" href="/files/output.css">
     <link rel="icon" href="/files/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- This is to setup a semi-responsive design based on the device -->
 </head>
 
 <body class="bg-black text-white font-[trebuc] w-full md:w-[96%] lg:w-[72%] xl:w-[48%] mx-auto">
 
-    <!-- HEAD -->
+    <!-- HEADER & NAVBAR -->
     <div class="my-8">
         
-        <h4 class="font-extrabold text-8xl font-[trebuc] text-center mb-[2px]">eleedee</h4>
+        <h4 id="top" class="font-extrabold text-8xl font-[trebuc] text-center mb-[2px]"><a href="index.html">eleedee</a></h4>
 
-        <div class="text-center font-[trebuc] italic *:bg-gradient-to-b *:from-green-400 *:via-transparent *:to-green-800 *:rounded-sm *:mx-0.5 *:px-2 *:py-0.5 
-        *:hover:underline *:hover:underline-offset-8 *:hover:decoration-2 *:hover:decoration-orange-600 *:hover:rounded-4xl">
+        <div class="text-center italic *:bg-gradient-to-b *:from-green-400 *:via-transparent *:to-green-800 *:rounded-4xl *:mx-0.5 *:px-2 *:py-0.5 
+        *:hover:underline *:hover:underline-offset-8 *:hover:decoration-2 *:hover:decoration-orange-600">
             <a href="#pizza" class="">pizza</a>
             <a href="#homelab" class="">homelab</a>
             <a href="#hacking" class="">hacking</a>
@@ -24,18 +25,72 @@
 
     </div>
 
-    <!-- MAIN -->
-    <div class="">
+    <!-- MAIN CONTENT -->
+    <div>
 
-        <!-- UNDER_CONSTRUCTION -->
-        <div class="mt-[25%]">
-            <h2 class="text-4xl text-center mb-2">Under Construction!!!!</h2>
-            <p class="text-2xl text-center mb-4">Will be up momentarily</p>
-            <img class="mx-auto" src="/files/cones.gif">
+        <!-- HOMELAB -->
+        <div id="homelab" class="p-2"> <!-- Changes made here apply to the whole homelab section -->
+            
+            <!-- Title & Back-To-Top -->
+            <div class="grid grid-cols-2 mb-4">
+                <h2 class="text-4xl italic">homelab</h2>
+                <a href="#top" class="text-xs text-green-400 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-orange-600 z-1 justify-self-end self-end">back to top</a>
+                <hr class="border-[1px] text-green-800 col-span-3"></hr>
+            </div>
+            
+            <!-- Radicale -->
+            <h2 class="text-2xl">Radicale</h2> <!-- Title & Navigation -->
+
+            <p class="mb-4"> <!-- Intro -->
+                I have a strong belief that full & complete data privacy is a <span class="font-bold">human right.</span> Unfortunately, serving you tailored ads is (apparently) more 
+                important than recognizing that there is an invasion of privacy going on. 
+                <br></br>
+                On that note, I've used a calendar for years, it's an important tool for me. However, the thought of willingly handing over my schedule, full of tasks & family events
+                to <span class="italic">big-tech</span> stirred an unpleasant feeling in me. I kid you not when I say that I would become livid when I'd set an event to attend graduation, 
+                and later on receive ads for overpriced gowns/challenge coins/memorabilia. <span class="font-bold underline">It's NOT right.</span>
+                <br></br>
+                Give me a button to press to keep my life private and I will press it. If you're thinking, "But I have nothing to hide," I would encourage you read the 1st paragraph of 
+                <a href="https://en.wikisource.org/wiki/The_Right_to_Privacy" target="_blank" class="underline hover:text-blue-600">The Right to Privacy</a> written in 1890, and reconsider
+                your stance. It's not a matter of hiding, it's <span class="italic">"the right to enjoy life,—the right to be let alone;"</span>
+                <br></br>
+                So this afternoon I will show you how to self-host your own <a href="https://en.wikipedia.org/wiki/CalDAV"  target="_blank" class="underline hover:text-blue-600">CalDAV</a>
+                server at home using <a href="https://radicale.org/v3.html"  target="_blank" class="underline hover:text-blue-600">Radicale</a>. With availability to read & edit events from the web or iphone!
+                Keeping your calendar, tasks, notes & data on an environment YOU secure. 
+                <br>
+                <span class="text-xs opacity-80">(Sorry android homies. I don't have an android phone, but I see you O_O)</span> 
+            </p>
+
+            <h1 class="text-xl">Config</h1> <!-- Config -->
+            <p class="mb-4">
+                Just so you're aware, this is written in nix! My entire homelab uses strictly NixOS.
+                Implementing this on your NixOS machine will setup the Radicale Server & the Radicale Web Client. Note that this does NOT setup port-forwarding. Please be safe and do
+                your own research on the risks of opening up ports/services to the internet!
+            </p>
+            <div id="radicale_code" class="mb-4 mx-auto w-full md:w-[80%]"></div>
+
+            <h1 class="text-xl">Usage</h1> <!-- Usage -->
+            <p>In this section I will show how to use & access the radicale service. Both on the web & iphone.</p>
+
+            <!-- UNDER_CONSTRUCTION -->
+            <div class="mt-8 mb-32">
+                <h2 class="text-4xl text-center mb-2">This Site Under Construction!!!!</h2>
+                <p class="text-2xl text-center mb-4">All other sections are a work-in-progress :-)</p>
+                <img class="mx-auto" src="/files/cones.gif">
+            </div>
         </div>
-
     </div>
+    
+    <script>
+        // Place all code blocks being called here. To generate iframes, use this wonderful open-source service! https://emgithub.com/
+        const radicale_code = '<iframe frameborder="0" scrolling="no" style="width:100%; height:838px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fyummyhomie%2FThe-Homie-Config%2Fblob%2Fmain%2Fprograms%2Fnixos%2Fradicale.nix&style=base16%2Fdarktooth&type=code&showBorder=on&showLineNumbers=on&showCopy=on"></iframe>';
+    
+        // Javascript to "write" the code block to the object that has an ID of whatever you set!
+        window.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#radicale_code').innerHTML = radicale_code;
+        });
+    </script>
 
     <div class="absolute -z-10 inset-0 h-full w-full bg-[linear-gradient(to_right,#20C20E20_1px,transparent_1px),linear-gradient(to_bottom,#20C20E20_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_80%,transparent_100%)]"></div>
+
 </body>
 </html>
