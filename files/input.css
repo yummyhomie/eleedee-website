@@ -1,6 +1,22 @@
 @import "tailwindcss" source("../");
 
+@theme {
+  --font-trebuc: trebuc;
+  --font-bluescreen: bluescreen;
+  --font-ledlight: ledlight;
+}
+
 @font-face {
-    font-family: trebuc;
-    src: url("./trebuc.ttf");
+  font-family: trebuc;
+  src: url("fonts/trebuc.ttf");
+}
+
+@font-face {
+  font-family: bluescreen;
+  src: url("fonts/bluescreen.ttf");
+}
+
+@font-face {
+  font-family: ledlight;
+  src: url("fonts/ledlight.otf");
 }
