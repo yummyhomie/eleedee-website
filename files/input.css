@@ -4,6 +4,9 @@
   --font-trebuc: trebuc;
   --font-bluescreen: bluescreen;
   --font-ledlight: ledlight;
+  --font-altehaasreg: altehaasreg;
+  --font-altehaasbold: altehaasbold;
+  --font-sunlightdreams: sunlightdreams;
 }
 
 @font-face {
@@ -19,4 +22,19 @@
 @font-face {
   font-family: ledlight;
   src: url("fonts/ledlight.otf");
+}
+
+@font-face {
+  font-family: altehaasreg;
+  src: url("fonts/altehaasreg.ttf");
+}
+
+@font-face {
+  font-family: altehaasbold;
+  src: url("fonts/altehaasbold.ttf");
+}
+
+@font-face {
+  font-family: sunlightdreams;
+  src: url("fonts/sunlightdreams.otf");
 }
