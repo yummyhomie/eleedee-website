@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- This is to setup a semi-responsive design based on the device -->
 </head>
 
-<body class="bg-black text-white font-trebuc w-full md:w-[96%] lg:w-[86%] xl:w-[58%] mx-auto">
+<body class="bg-[url('32.png')] text-[#e4e4d4] font-sunlightdreams w-full md:w-[96%] lg:w-[86%] xl:w-[58%] mx-auto">
 
     <!-- HEADER & NAVBAR -->
-    <div class="my-1 w-min">
+    <div class="w-min">
         <h4 class="font-extrabold font-bluescreen text-center text-9xl text-black drop-shadow-[0_0_1px_rgba(54,255,0,1),0_0_2px_rgba(54,255,0,1),0_0_4px_rgba(54,255,0,1),0_0_8px_rgba(0,255,126,1)] 
         hover:drop-shadow-[0_0_16px_rgba(54,255,0,1),0_0_32px_rgba(54,255,0,1),0_0_44px_rgba(54,255,0,1),0_0_64px_rgba(54,255,0,1)] duration-[800ms]">
             <a href="../index.html">eleedee</a>
@@ -27,23 +27,11 @@
     </div>
     
     <!-- HOMELAB -->
-    <div id="homelab" class="relative min-h-screen p-2 mb-[200%]"> <!-- Changes made here apply to the whole homelab section -->
-        
-        <div class="grid grid-cols-2 mb-4"> <!-- Title & Back-To-Top -->
-            <h2 class="text-4xl italic">homelab</h2>
-            <div class="*:text-xs *:text-green-400 *:hover:underline *:hover:decoration-2 *:hover:decoration-orange-600 z-1 justify-self-end self-end *:">
-                <a href="#pizza">to pizza</a>
-                <a href="#hacking" class="border-l border-green-400 pl-1">to hacking</a>
-                <a href="#about" class="border-l border-green-400 pl-1">to about</a>
-                <a href="#top" class="border-l border-green-400 pl-1">back to top</a>
-            </div>
-            <hr class="border-[1px] text-green-800 col-span-3"></hr>
-        </div>
-        
-        <!-- Radicale -->
-        <h2 class="text-2xl">Radicale</h2> <!-- Title -->
-
-        <p class="mb-4"> <!-- Intro -->
+    <div class="mt-16"> <!-- Radicale -->
+        <p id="Radicale" class="text-5xl hover:drop-shadow-[0_0_1px_rgba(162,0,0,1),0_0_2px_rgba(162,0,0,1),0_0_4px_rgba(162,0,0,1),0_0_8px_rgba(215,55,0,1)] duration-900">Radicale</p> 
+    </div> 
+    <div class="bg-black/70 p-2 rounded-4xl">    
+        <p> <!-- Intro -->
             I have a strong belief that full & complete data privacy is a <span class="font-bold">human right.</span> Unfortunately, serving you tailored ads is (apparently) more 
             important than recognizing that there is an invasion of privacy going on. 
             <br></br>
@@ -68,17 +56,27 @@
             Implementing this on your NixOS machine will setup the Radicale Server & the Radicale Web Client. Note that this does NOT setup port-forwarding. Please be safe and do
             your own research on the risks of opening up ports/services to the internet!
         </p>
-        <div id="radicale_code" class="mb-4 mx-auto w-full md:w-[80%]"></div>
+        <div id="radicale_code" class="mx-auto w-full md:w-[80%]"></div>
 
         <h1 class="text-xl">Usage</h1> <!-- Usage -->
         <p>In this section I will show how to use & access the radicale service. Both on the web & iphone.</p>
-
-        <!-- UNDER_CONSTRUCTION -->
-        <div class="mt-8 mb-32">
-            <h2 class="text-4xl text-center mb-2">This Section Under Construction!</h2>
-            <img class="mx-auto" src="/files/cones.gif">
-        </div>
     </div>
+
+    <!-- UNDER_CONSTRUCTION -->
+    <div class="mt-8 mb-32">
+        <h2 class="text-4xl text-center mb-2">This Section Under Construction!</h2>
+        <img class="mx-auto" src="/files/cones.gif">
+    </div>
+
+    <script>
+        // Place all code blocks being called here. To generate iframes, use this wonderful open-source service! https://emgithub.com/
+        const radicale_code = '<iframe frameborder="0" scrolling="no" style="width:100%; height:838px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fyummyhomie%2FThe-Homie-Config%2Fblob%2Fmain%2Fprograms%2Fnixos%2Fradicale.nix&style=base16%2Fdarktooth&type=code&showBorder=on&showLineNumbers=on&showCopy=on"></iframe>';
+    
+        // Javascript to "write" the code block to the object that has an ID of whatever you set!
+        window.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#radicale_code').innerHTML = radicale_code;
+        });
+    </script>
 
 </body>
 </html>
