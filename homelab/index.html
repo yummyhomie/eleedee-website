@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+<head>
+    <title>eleedee's site</title>
+    <link rel="stylesheet" href="../files/output.css">
+    <link rel="icon" href="../files/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- This is to setup a semi-responsive design based on the device -->
+</head>
+
+<body class="bg-[url('32.png')] text-[#e4e4d4] font-sunlightdreams w-full md:w-[96%] lg:w-[86%] xl:w-[58%] mx-auto">
+
+    <!-- HEADER & NAVBAR -->
+    <div class="w-min">
+        <h4 class="font-extrabold font-bluescreen text-center text-9xl text-black drop-shadow-[0_0_1px_rgba(54,255,0,1),0_0_2px_rgba(54,255,0,1),0_0_4px_rgba(54,255,0,1),0_0_8px_rgba(0,255,126,1)] 
+        hover:drop-shadow-[0_0_16px_rgba(54,255,0,1),0_0_32px_rgba(54,255,0,1),0_0_44px_rgba(54,255,0,1),0_0_64px_rgba(54,255,0,1)] duration-[800ms]">
+            <a href="../index.html">eleedee</a>
+        </h4>
+        <div class="mt-4 text-2xl tracking-widest text-center font-extralight text-black
+        font-ledlight drop-shadow-[0_0_1px_rgba(54,255,0,1),0_0_2px_rgba(54,255,0,1),0_0_4px_rgba(54,255,0,1),0_0_8px_rgba(0,255,126,1)]
+        *:hover:drop-shadow-[0_0_2px_rgba(0,255,126,1),0_0_4px_rgba(0,255,126,1)] *:duration-[200ms]">
+            <a class="px-1" href="../pizza/">pizza</a>
+            <a class="px-1 drop-shadow-[0_0_4px_rgba(0,111,135,1)]" href="../homelab/">homelab</a>
+            <a class="px-1" href="../hacking/">hacking</a>
+            <a class="px-1" href="../about/">about</a>
+        </div>
+    </div>
+    
+    <!-- HOMELAB -->
+    <div class="mt-16"> <!-- Radicale -->
+        <p id="Radicale" class="text-5xl hover:drop-shadow-[0_0_1px_rgba(162,0,0,1),0_0_2px_rgba(162,0,0,1),0_0_4px_rgba(162,0,0,1),0_0_8px_rgba(215,55,0,1)] duration-900">Radicale</p> 
+    </div> 
+    <div class="bg-black/70 p-2 rounded-4xl">    
+        <p> <!-- Intro -->
+            I have a strong belief that full & complete data privacy is a <span class="font-bold">human right.</span> Unfortunately, serving you tailored ads is (apparently) more 
+            important than recognizing that there is an invasion of privacy going on. 
+            <br></br>
+            On that note, I've used a calendar for years, it's an important tool for me. However, the thought of willingly handing over my schedule, full of tasks & family events
+            to <span class="italic">big-tech</span> stirred an unpleasant feeling in me. I kid you not when I say that I would become livid when I'd set an event to attend graduation, 
+            and later on receive ads for overpriced gowns/challenge coins/memorabilia. <span class="font-bold underline">It's NOT right.</span>
+            <br></br>
+            Give me a button to press to keep my life private and I will press it. If you're thinking, "But I have nothing to hide," I would encourage you read the 1st paragraph of 
+            <a href="https://en.wikisource.org/wiki/The_Right_to_Privacy" target="_blank" class="underline hover:text-blue-600">The Right to Privacy</a> written in 1890, and reconsider
+            your stance. It's not a matter of hiding, it's <span class="italic">"the right to enjoy life,—the right to be let alone;"</span>
+            <br></br>
+            So this afternoon I will show you how to self-host your own <a href="https://en.wikipedia.org/wiki/CalDAV"  target="_blank" class="underline hover:text-blue-600">CalDAV</a>
+            server at home using <a href="https://radicale.org/v3.html"  target="_blank" class="underline hover:text-blue-600">Radicale</a>. With availability to read & edit events from the web or iphone!
+            Keeping your calendar, tasks, notes & data on an environment YOU secure. 
+            <br>
+            <span class="text-xs opacity-80">(Sorry android homies. I don't have an android phone, but I see you O_O)</span> 
+        </p>
+
+        <h1 class="text-xl">Config</h1> <!-- Config -->
+        <p class="mb-4">
+            Just so you're aware, this is written in nix! My entire homelab uses strictly NixOS.
+            Implementing this on your NixOS machine will setup the Radicale Server & the Radicale Web Client. Note that this does NOT setup port-forwarding. Please be safe and do
+            your own research on the risks of opening up ports/services to the internet!
+        </p>
+        <div id="radicale_code" class="mx-auto w-full md:w-[80%]"></div>
+
+        <h1 class="text-xl">Usage</h1> <!-- Usage -->
+        <p>In this section I will show how to use & access the radicale service. Both on the web & iphone.</p>
+    </div>
+
+    <!-- UNDER_CONSTRUCTION -->
+    <div class="mt-8 mb-32">
+        <h2 class="text-4xl text-center mb-2">This Section Under Construction!</h2>
+        <img class="mx-auto" src="/files/cones.gif">
+    </div>
+
+    <script>
+        // Place all code blocks being called here. To generate iframes, use this wonderful open-source service! https://emgithub.com/
+        const radicale_code = '<iframe frameborder="0" scrolling="no" style="width:100%; height:838px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fyummyhomie%2FThe-Homie-Config%2Fblob%2Fmain%2Fprograms%2Fnixos%2Fradicale.nix&style=base16%2Fdarktooth&type=code&showBorder=on&showLineNumbers=on&showCopy=on"></iframe>';
+    
+        // Javascript to "write" the code block to the object that has an ID of whatever you set!
+        window.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#radicale_code').innerHTML = radicale_code;
+        });
+    </script>
+
+</body>
+</html>
